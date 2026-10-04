@@ -1,0 +1,103 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+    font-family: sans-serif;
+}
+.calculator {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+#dis {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: right;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+}
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+button {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+}
+button:hover {
+    background: #444;
+}
+button:last-child {
+    background: #ff9500;
+}
+        </style>
+    <body>
+        <h1>CALCULATOR</h1>
+ <input type="text" id="dis"><br><br>
+<button onclick="dis.value+='1'">1</button>
+<button onclick="dis.value+='2'">2</button>
+<button onclick="dis.value+='3'">3</button>
+<button onclick="dis.value+='+'">+</button><br></br>
+
+<button onclick="dis.value+='4'">4</button>
+<button onclick="dis.value+='5'">5</button>
+<button onclick="dis.value+='6'">6</button>
+<button onclick="dis.value+='-'">-</button><br></br>
+
+<button onclick="dis.value+='7'">7</button>
+<button onclick="dis.value+='8'">8</button>
+<button onclick="dis.value+='9'">9</button>
+<button onclick="dis.value+='*'">*</button><br></br>
+
+<button onclick="dis.value+='0'">0</button>
+<button onclick="dis.value+='/'">/</button>
+<button onclick="dis.value=eval(dis.value)">=</button>
+<button onclick="dis.value=''">ac</button>
+<script>
+    function insert(val)
+ {
+    exp = exp + val;
+    document.getElementById("dis").value = exp;
+}
+
+function calculate()
+ {
+    try {
+        exp = eval(exp).toString();
+        document.getElementById("dis").value = exp;
+    } catch (e)
+     {
+        document.getElementById("dis").value = "Error";
+        exp = "";
+    }
+}
+
+function clearall()
+ {
+    exp = "";
+    document.getElementById("dis").value = exp;
+}
+</script>
+</body>
+</html>
